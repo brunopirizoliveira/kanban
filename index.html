@@ -1,194 +1,124 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>SortableJS</title>  
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/> -->
-    <link href="styles.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    
-    <div id="wrapper">
-
-        <div id="backlog">            
-            <div id="backlog_1">                
-                <div class="list-group mb-1">
-                    <div class="list-group-item header-bl">
-                        Backlog
-                    </div>
-                </div>
-                <div id="list_backlog_1" class="list-group">
-                    <div id="card_backlog_1" class="list-group-item grabbable disparaCard">42477 (Intellichat)     <span class="badge badge-pill badge-success"> Baixa </span></div>
-                    <div id="card_backlog_3" class="list-group-item grabbable disparaCard">42443 (Qualitor S.A.)   <span class="badge badge-pill badge-primary"> Teste </span></div>
-                    <div id="card_backlog_2" class="list-group-item grabbable disparaCard">42322 (Qualitor S.A.)   <span class="badge badge-pill badge-danger"> Alta </span></div>
-                    <div id="card_backlog_4" class="list-group-item grabbable disparaCard">42543 (Qualitor S.A.)   <span class="badge badge-pill badge-warning"> Média </span></div>
-                    <div id="card_backlog_5" class="list-group-item grabbable disparaCard">42567 (Intellichat)     <span class="badge badge-pill badge-info"> Info </span></div>
-                    <div id="card_backlog_7" class="list-group-item grabbable disparaCard">65567 (Intellichat)     <span class="badge badge-pill badge-light"> Muito baixa </span></div>
-                    <div id="card_backlog_8" class="list-group-item grabbable disparaCard">23547 (Qualitor S.A.)   <span class="badge badge-pill badge-dark"> Muito alta </span></div>
-                    <div id="card_backlog_9" class="list-group-item grabbable disparaCard">54647 (Intellichat)     <span class="badge badge-pill badge-secondary"> Secundária </span></div>
-                    <div id="card_backlog_10" class="list-group-item grabbable disparaCard">4777 (Qualitor S.A.)   </div>                    
-                    <div id="card_backlog_11" class="list-group-item grabbable disparaCard">47777 (Qualitor S.A.)  </div>
-                    <div id="card_backlog_12" class="list-group-item grabbable disparaCard">88877 (Qualitor S.A.)  </div>
-                    <div id="card_backlog_13" class="list-group-item grabbable disparaCard">42237 (Qualitor S.A.)  </div>
-                    <div id="card_backlog_14" class="list-group-item grabbable disparaCard">42234 (Intellichat)    </div>
-                    <div id="card_backlog_15" class="list-group-item grabbable disparaCard">44111 (Qualitor S.A.)  </div>
-                    <div id="card_backlog_16" class="list-group-item grabbable disparaCard">44122 (Qualitor S.A.)  </div>
-                    <div id="card_backlog_17" class="list-group-item grabbable disparaCard">44144 (Qualitor S.A.)  </div>
-                    <div id="card_backlog_18" class="list-group-item grabbable disparaCard">44133 (Qualitor S.A.)  </div>                    
-                    <div id="card_backlog_20" class="list-group-item grabbable disparaCard">44131 (Qualitor S.A.)  </div>                    
-                    <div id="card_backlog_19" class="list-group-item grabbable disparaCard">44221 (Qualitor S.A.)  </div>                    
- 
-                </div>                
-            </div>
-        </div>
-    
-        <div id="users">
-            <div id="user_1">
-                <div class="list-group-item mb-1 header-bl grabbable ">
-                    Bruno
-                </div>
-                <div id="list_user_1" class="list-group">
-                    <div class="list-group-item grabbable disparaCard">44221 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">41021 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40001 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">43030 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40300 (Qualitor S.A.)</div>
-                </div>
-            </div>
-            <div id="user_2">
-                <div class="list-group-item mb-1 header-bl grabbable ">
-                    William
-                </div>                
-                <div id="list_user_2" class="list-group">
-                    <div class="list-group-item grabbable disparaCard">44221 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">41021 (Intellichat)</div>
-                    <div class="list-group-item grabbable disparaCard">40001 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">43030 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40300 (Intellichat)</div>
-                    <div class="list-group-item grabbable disparaCard">44221 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">41021 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40001 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">43030 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40300 (Intellichat)</div>
-                    <div class="list-group-item grabbable disparaCard">44221 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">41021 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40001 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">43030 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40300 (Qualitor S.A.)</div>                                        
-                </div>                
-            </div>
-            <div id="user_3">
-                <div class="list-group-item mb-1 header-bl grabbable ">
-                    Nataniel
-                </div>                                        
-                <div id="list_user_3" class="list-group">
-                    <div class="list-group-item grabbable disparaCard">44566 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">41067 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40872 (Intellichat)</div>
-                    <div class="list-group-item grabbable disparaCard">43034 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40304 (Qualitor S.A.)</div>
-                </div>                
-            </div>
-            <div id="user_4">
-                <div class="list-group-item mb-1 header-bl grabbable ">
-                    Douglas
-                </div>  
-                <div id="list_user_4" class="list-group">
-                    <div class="list-group-item grabbable disparaCard">44766 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">41656 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40544 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">43023 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40312 (Qualitor S.A.)</div>
-                </div>                
-            </div>
-            <div id="user_5">
-                <div class="list-group-item mb-1 header-bl grabbable ">
-                    Adriano
-                </div> 
-                <div id="list_user_5" class="list-group">
-                    <div class="list-group-item grabbable disparaCard">44334 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">41997 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40088 (Intellichat)</div>
-                    <div class="list-group-item grabbable disparaCard">43067 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40233 (Qualitor S.A.)</div>
-                </div>                
-            </div>
-            <div id="user_6">
-                <div class="list-group-item mb-1 header-bl grabbable ">
-                    Ronie
-                </div>
-                <div id="list_user_6" class="list-group">
-                    <div class="list-group-item grabbable disparaCard">44296 (Intellichat)</div>
-                    <div class="list-group-item grabbable disparaCard">41098 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40545 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">43033 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40232 (Qualitor S.A.)</div>
-                </div>                
-            </div>
-
-            <div id="user_7">
-                <div class="list-group-item mb-1 header-bl grabbable ">
-                    Eduardo
-                </div>
-                <div id="list_user_7" class="list-group">
-                    <div class="list-group-item grabbable disparaCard">44533 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">41065 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40777 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">43888 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40399 (Qualitor S.A.)</div>
-                </div>                
-            </div>
-            
-            <div id="user_8">
-                <div class="list-group-item mb-1 header-bl grabbable ">
-                    Marco
-                </div>
-                <div id="list_user_8" class="list-group">
-                    <div class="list-group-item grabbable disparaCard">44099 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">41491 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">43301 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">42030 (Qualitor S.A.)</div>
-                    <div class="list-group-item grabbable disparaCard">40301 (Qualitor S.A.)</div>
-                </div>                
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- The Modal -->
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-        
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Chamado 41085</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-        
-            <!-- Modal body -->
-            <div class="modal-body">
-                <p>Demanda interna: Implementações BC para Qualitor 8.10 (sem replicação posterior).
-                    Projeto Eduardo e...</p>
-            </div>
-        
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        
-            </div>
-        </div>
-    </div>    
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="Sortable.min.js"></script>
-    <script src="script.js"></script>
-
-</body>
+	<head>
+		<title>SortableJS</title>
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+		<link href="styles.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="area_backlog">
+				<div id="backlog_1">
+					<div class="header-card-bl">
+						<div class="list-group-item header-bl">
+							Backlog
+						</div>
+					</div>
+					<div id="list_backlog_1" class="list-group">
+						<div id="card_backlog_1" class="list-group-item grabbable disparaCard">
+							<span class="header-chamado">42477 <span class="header-chamado-title"> - Reclamação registrada via e-mail </span>  </span> <br><br> 
+							<p class="description-chamado">Consultoria -  Novo canal serviço - menu 8h </p>
+						</div>						
+					</div>
+				</div>
+			</div>
+			<div id="area_users">
+				<div id="user_1">
+					<div class="list-group-item  header-bl grabbable ">
+						Bruno
+					</div>
+					<div id="list_user_1" class="list-group">
+						<div class="list-group-item grabbable disparaCard"> <span class="header-chamado-user">44221</span> </div>
+					</div>
+				</div>
+				<div id="user_2">
+					<div class="list-group-item  header-bl grabbable ">
+						William
+					</div>
+					<div id="list_user_2" class="list-group">
+						<div class="list-group-item grabbable disparaCard"> <span class="header-chamado-user">44221</span>  </div>
+					</div>
+				</div>
+				<div id="user_3">
+					<div class="list-group-item  header-bl grabbable ">
+						Nataniel
+					</div>
+					<div id="list_user_3" class="list-group">
+						<div class="list-group-item grabbable disparaCard"> <span class="header-chamado-user">44566</span>  </div>
+					</div>
+				</div>
+				<div id="user_4">
+					<div class="list-group-item  header-bl grabbable ">
+						Douglas
+					</div>
+					<div id="list_user_4" class="list-group">
+						<div class="list-group-item grabbable disparaCard"> <span class="header-chamado-user">44766</span> </div>
+					</div>
+				</div>
+				<div id="user_5">
+					<div class="list-group-item  header-bl grabbable ">
+						Adriano
+					</div>
+					<div id="list_user_5" class="list-group">
+						<div class="list-group-item grabbable disparaCard"> <span class="header-chamado-user">44334</span> </div>
+					</div>
+				</div>
+				<div id="user_6">
+					<div class="list-group-item  header-bl grabbable ">
+						Ronie
+					</div>
+					<div id="list_user_6" class="list-group">
+						<div class="list-group-item grabbable disparaCard"> <span class="header-chamado-user">44296</span> </div>
+					</div>
+				</div>
+				<div id="user_7">
+					<div class="list-group-item  header-bl grabbable ">
+						Eduardo
+					</div>
+					<div id="list_user_7" class="list-group">
+						<div class="list-group-item grabbable disparaCard"> <span class="header-chamado-user">44533</span>  </div>
+					</div>
+				</div>
+				<div id="user_8">
+					<div class="list-group-item  header-bl grabbable ">
+						Marco
+					</div>
+					<div id="list_user_8" class="list-group">
+						<div class="list-group-item grabbable disparaCard"> <span class="header-chamado-user">44099</span>  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- The Modal -->
+		<div class="modal" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">Chamado 41085</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<!-- Modal body -->
+					<div class="modal-body">
+						<p>Demanda interna: Implementações BC para Qualitor 8.10 (sem replicação posterior).
+							Projeto Eduardo e...
+						</p>
+					</div>
+					<!-- Modal footer -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+		<script src="Sortable.min.js"></script>
+		<script src="script.js"></script>
+	</body>
 </html>
