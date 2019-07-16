@@ -77,7 +77,7 @@ body {
     background-color: white;
     height: 50px;
     width: 100%;
-    min-width: 300px;
+    min-width: 300px;    
 }
 
 .header-bl {
@@ -90,4 +90,18 @@ body {
     text-align: center;
     padding-bottom: 2rem;
 
+}
+
+.grabbable {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+ /* Apply a "closed-hand" cursor during drag operation. */
+.grabbable:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
 }
