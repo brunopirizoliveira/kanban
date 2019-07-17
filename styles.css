@@ -1,3 +1,5 @@
+/* Estilos Globais */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,86 +11,7 @@ body {
     overflow-y: hidden;
 }
 
-#wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding: 1px;
-    height: 99vh;
-}
-
-#area_backlog {
-    flex:1;
-    /* background-color: gainsboro; */
-    width: 30vh;
-    margin-top: 3px;
-    height: 98vh;   
-    overflow-x: scroll;
-}
-
-#backlog_1 {
-    flex: 1;
-    justify-content: space-between;    
-    height: 98vh;
-    margin: 3px;    
-    /* border: 1px solid #e5e5e5; */
-}
-
-#area_users {
-    flex:3;
-    display: flex;
-    background-color: white;
-    margin-top: 3px;
-    width: 60vh;    
-    height: 98vh;
-
-    border-left: solid 2px #e5e5e5;
-
-    flex-wrap: nowrap;
-    overflow-x: scroll;    
-    overflow-y: scroll;
-}
-
-#area_users > div {
-    flex: 1;
-    justify-content: space-between;
-    min-width: 80px;
-    max-width: 100px;
-    height: 98vh;
-    margin: 3px;
-    /* border: 1px solid #e5e5e5; */
-}
-
-/* #area_users div:nth-child(even) {
-    background-color: darkgoldenrod;
-}
-#area_users div:nth-child(odd) {
-    background-color: khaki;
-} */
-
-#area_users > div > ul > li{
-    background-color: white;
-    height: 50px;
-    width: 100%;
-}
-
-#area_backlog > div > ul > li{
-    background-color: white;
-    height: 50px;
-    width: 100%;
-    min-width: 300px;    
-}
-
-.header-bl {
-    width: 100%;
-    height: 30px;
-    margin-bottom: 2px;
-    background-color: #3BC0C3;
-    color: white;
-    font-size: 14px; 
-    text-align: center;
-    padding-bottom: 2rem;
-
-}
+/********* Estilo mouse *********/
 
 .grabbable {
     cursor: move; /* fallback if grab cursor is unsupported */
@@ -104,22 +27,186 @@ body {
     cursor: -webkit-grabbing;
 }
 
-.header-card-bl {
-    margin-bottom: 2px;
+
+/* Estilos Content Wrapper */
+
+#wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 1px;
+    height: 99vh;
 }
 
-.header-chamado{
+/********* Estilo Backlog *********/
+
+.area-backlog {
+    flex:1;
+    /* background-color: gainsboro; */
+    min-width: 300px !important;    
+    margin-top: 3px;
+    height: 98vh;   
+    overflow-x: scroll;
+}
+
+.card-backlog {
+    margin-bottom: 2px;   
+}
+/* 
+#backlog {
+    flex: 1;
+    justify-content: space-between;    
+    height: 98vh;
+    margin: 3px;
+} */
+
+/* .area-backlog > div > ul > li{
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    min-width: 300px;    
+} */
+
+.header-backlog {
+    width: 100%;
+    height: 35px;    
+    background-color: #3BC0C3;
+    color: white;
+    font-size: 12px; 
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 2px;   
+}
+
+.area-backlog .header-chamado {
     font-weight: bold;
 }
 
-.description-chamado {
-    text-decoration: none;
+.area-backlog .header-chamado-title{
+    display: initial;
 }
 
-#area_users .description-chamado{
+.area-backlog .description-chamado{    
+    display: initial;
+}
+
+.area-backlog .description-chamado > p {
+    margin-top: 1rem;
+}
+
+/******** Estilo Users *********/
+
+.area-users {
+    flex:3;
+    display: flex;
+    background-color: white;    
+    width: 60%;
+    height: 98vh;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;    
+    overflow-y: scroll;
+}
+
+/* #area_users div:nth-child(even) {
+    background-color: darkgoldenrod;
+}
+#area_users div:nth-child(odd) {
+    background-color: khaki;
+} */
+
+/* Column Users Kanban */
+.list-card-user {
+    height: 70vh;
+}
+
+/* Este é o card em si (Criar classe para o mesmo) */
+.card-user {
+    margin-bottom: 2px;
+}
+
+.header-user {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 2px;
+    background-color: #3BC0C3;
+    color: white;
+    font-size: 12px; 
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .area-users > div > ul > li{
+    background-color: white;
+    height: 50px;
+    width: 100%;
+} */
+
+.container-user {
+    flex: 1 0 100px;
+    justify-content: space-between;
+    height: 98vh;
+    margin: 3px;
+    /* border: 1px solid #e5e5e5; */
+}
+
+/* Container Decrease */
+
+.description-chamado > p {
+    height: 30px;
+}
+
+.area-users .container-user .header-chamado {
+    font-weight: normal
+}
+
+.area-users .container-user .header-chamado-title{
     display: none;
 }
 
-#area_users .header-chamado-title{
+.area-users .container-user .description-chamado{
     display: none;
+}
+
+/* Card Expand */
+
+.container-user-expand {
+    flex: 6 0 350px;
+    justify-content: space-between;
+    height: 98vh;
+    margin: 3px;
+}
+
+.area-users .container-user-expand .header-chamado {
+    font-weight: bold;
+}
+
+.area-users .container-user-expand .header-chamado-title{
+    display: initial;
+}
+
+.area-users .container-user-expand .description-chamado{    
+    display: initial;    
+}
+
+.area-users .container-user-expand .description-chamado > p {
+    margin-top: 1rem;    
+}
+
+
+/* Sortable-Ghost */
+/* .sortable-chosen, sortable-chosen.sortable-ghost {
+    opacity: 0;
+} */
+.sortable-ghost {
+  background-color: #dadada;
+  opacity: 1;
+}
+
+/* Icon Font-Awesome */
+.icone {
+    font-size: 10px;
+    /* cursor: pointer; */
 }

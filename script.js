@@ -1,60 +1,110 @@
 
-const tecnicos = [
-   "Administrador",
-   "Adriano Dutra Wichmann",
-   "Adriano Franco",
-   "Andréia Regina da Rosa",
-   "Bruno Fernandes Ukoski",
-   "Claudio Cardozo",
-   "Eduardo Franck Garcia",
-   "Jonathan Padilha Dellagustin",
-   "Marco Aurélio Pintos Borges",
-   "Tatiane Moraes dos Santos",
-   "William da Fonseca Guimaraes"
-];
+window.onload = function() {
 
+   // Popula Kanbans
+   fetch('http://localhost:3000/users', { method: 'GET'})
+   .then(responseUsers => responseUsers.json())
+   .then(dataUsers => users = dataUsers.recordset)
+   .then(() => {
+      fetch('http://localhost:3000/chamados', {method: 'GET'})
+      .then(responseChamados => responseChamados.json())
+      .then(dataChamados => chamados = dataChamados.recordset)
+      .then(chamados => {
+         // console.dir(chamados);
+         // console.dir(users);
+         users.forEach(function(object, index) {
 
+            document.querySelector("#area_users")
+            .innerHTML += `
+               <div id="user_${index}" class="container-user" >
+                  <div class="header-user grabbable" onclick="toggleClass(this)">
+                     ${retornFirstName(object.nmusuario)} 
+                     <span class="icone">
+                        <i class="fa fa-expand" aria-hidden="true"></i>
+                     </span>
+                  </div>
+                  <div id="list_card_user_${index}" class="list-group list-card-user">                     
+                     ${chamados.filter(chamado => chamado.nmusuario === object.nmusuario).map(currElement => `
+                        <div data-id="${currElement.cdchamado}" class="list-group-item grabbable card-user" onclick="abreChamado(this)"> 
+                           <span class="header-chamado">${currElement.cdchamado}
+                              <span class="header-chamado-title"> - ${currElement.nmcliente} - ${currElement.nmseveridade} </span>  
+                           </span> 
+                           <span class="description-chamado">                   
+                              <p> ${ currElement.dschamado.length > 90 ? `${currElement.dschamado.substring(0,89)}... ` : currElement.dschamado} </p>
+                           </span> 
+                        </div>`).join('')}
+                  </div>
+               </div>`;
 
-tecnicos.forEach(function(value, index) {
+         });
 
-   document.querySelector("#area_users").innerHTML += `
-      <div id="user_${index}">
-         <div class="list-group-item  header-bl grabbable ">
-            ${value}
-         </div>
-         <div id="list_user_${index}" class="list-group">
-            <div class="list-group-item grabbable disparaCard"> <span class="header-chamado-user">44221</span> </div>
-         </div>
-      </div>`;
-});
+         document.querySelector("#list_backlog")
+         .innerHTML += chamados.filter(chamado => chamado.nmusuario == null).map((currElement, index) => `
+            <div data-id="${currElement.cdchamado}" id="card_backlog_${index}" class="list-group-item grabbable card-backlog" onclick="abreChamado(this)">
+               <span class="header-chamado"> ${currElement.cdchamado} 
+                  <span class="header-chamado-title"> - ${currElement.nmcliente} - ${currElement.nmseveridade} </span>  
+               </span> 
+               <span class="description-chamado">                   
+               <p> ${ currElement.dschamado.length > 90 ? `${currElement.dschamado.substring(0,89)}... ` : currElement.dschamado} </p>
+               </span>
+            </div>`).join('');
 
-// Order Backlog Items
-Sortable.create(list_backlog_1, { group: 'shared', animation: 150, sort: true });
+      })
+      .then(() => {
 
-// Order Users
-Sortable.create(area_users, { 
-   animation: 150, 
-   sort: true , // handle's class
-});
+         // Order Backlog Items
+         Sortable.create(list_backlog, { group: 'shared', animation: 150, sort: true });
+         // Order Users
+         Sortable.create(area_users, { animation: 150, sort: true });
+         // Order Users Items
+         document.querySelectorAll(".list-card-user").forEach(function(element) {            
+            let elUser = document.getElementById(element.id);            
+            
+            Sortable.create(elUser, { 
+               group: 'shared', 
+               animation: 150, 
+               sort: true 
+               // , onStart: function(evt) {
+               //    var itemEl = evt.item;
+               //    toggleClass(itemEl.parentNode);
+               //    console.log(itemEl);
+               // }
+            });   
 
-// Order Users Items
-Sortable.create(list_user_1, { group: 'shared', animation: 150, sort: true });
-Sortable.create(list_user_2, { group: 'shared', animation: 150, sort: true });
-Sortable.create(list_user_3, { group: 'shared', animation: 150, sort: true });
-Sortable.create(list_user_4, { group: 'shared', animation: 150, sort: true });
-Sortable.create(list_user_5, { group: 'shared', animation: 150, sort: true });
-Sortable.create(list_user_6, { group: 'shared', animation: 150, sort: true });
-Sortable.create(list_user_7, { group: 'shared', animation: 150, sort: true });
-Sortable.create(list_user_8, { group: 'shared', animation: 150, sort: true });
+         })
+      })
 
-// Dispara Modal
- $(".disparaCard").on("click", function() {
-    $('#myModal').modal('show');
+   })
 
+}
 
-   fetch('http://localhost:3000/chamados', { method: 'GET'})
-   .then(response => response.json())
-   .then(data => console.dir(data));
+function retornFirstName(name) {
+   name = name.split(' ');
+   return name[0];
+}
 
- });
+function abreChamado(target) {
+   console.log(target.dataset.id);
+   
+   $('#myModal').modal('show');
+}
 
+function toggleClass(target) {
+
+   let wrapper = document.getElementById(target.parentNode.id);
+
+   document.querySelectorAll('.container-user-expand').forEach(element => {      
+      if(element.id != target.parentNode.id){
+         document.getElementById(element.id).classList.remove('container-user-expand');
+         document.getElementById(element.id).classList.add('container-user');
+      }         
+   });   
+
+   if(wrapper.classList.contains('container-user-expand')) {
+      wrapper.classList.remove('container-user-expand');
+      wrapper.classList.add('container-user');
+   } else {
+      wrapper.classList.remove('container-user');
+      wrapper.classList.add('container-user-expand');
+   }
+}
