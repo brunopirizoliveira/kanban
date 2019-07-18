@@ -210,7 +210,23 @@ body {
 
 /* Sortable Chosen */
 .custom-chosen {
-    background-color: lemonchiffon;
+    background-color: lemonchiffon;    
     color: black;
-    opacity: 0.2;
 }
+
+/* Sortable Ghost */
+.custom-ghost {
+    opacity: 0.4;
+    background-color: #E4E9EB;
+}
+
+/* Sortable Drag */
+.custom-drag {
+    display: none;
+}
+
+/* 
+.area-backlog .custom-drag {
+    width: 115px !important;
+    left: 115px !important;     
+} */

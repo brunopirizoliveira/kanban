@@ -67,18 +67,20 @@ window.onload = function() {
             sort: true, 
             chosenClass: "custom-chosen",
             // ghostClass: "custom-ghost", 
-            // dragClass: "custom-target" ,
-            revertDuration: 0,
-            forceFallback: true,
-            delay: 0, 
-	         delayOnTouchOnly: false
+            dragClass: "custom-drag", // Custom class para esconde Drag, junto com ForceFallback, elemento não se perde            
+            forceFallback: true, // Para elemento voltar para o lugar
+            fallbackTolerance: 1, //Tolerancia para click
+            delay: 3 //Delay para click
          });
          
          // Order Users
          Sortable.create(area_users, { 
             animation: 150, 
             sort: true,
-            delay: 0, 
+            ghostClass: "custom-ghost",
+            forceFallback: true, // Para elemento voltar para o lugar
+            fallbackTolerance: 1, //Tolerancia para click
+            delay: 3 //Delay para click
          });
          // Order Users Items
          document.querySelectorAll(".list-card-user").forEach(function(element) {
@@ -90,11 +92,10 @@ window.onload = function() {
                sort: true, 
                chosenClass: "custom-chosen",
                // ghostClass: "custom-ghost", 
-               // dragClass: "custom-target" ,
-               revertDuration: 0,
-               forceFallback: true,
-               delay: 0, 
-	            delayOnTouchOnly: false
+               dragClass: "custom-drag", // Custom class para esconde Drag, junto com ForceFallback, elemento não se perde            
+               forceFallback: true, // Para elemento voltar para o lugar
+               fallbackTolerance: 1, //Tolerancia para click
+               delay: 3 //Delay para click
             });
          })
       })
