@@ -10,18 +10,17 @@ window.onload = function() {
       .then(responseChamados => responseChamados.json())
       .then(dataChamados => chamados = dataChamados.recordset)
       .then(chamados => {
-         // console.dir(chamados);
-         // console.dir(users);
          users.forEach(function(object, index) {
 
+            // Carrega Columns e Cards (Users)
             document.querySelector("#area_users")
             .innerHTML += `
                <div id="user_${index}" class="container-user" >
                   <div class="header-user grabbable" onclick="toggleClass(this)">
                      ${retornFirstName(object.nmusuario)} 
-                     <span class="icone">
-                        <i class="fa fa-expand" aria-hidden="true"></i>
-                     </span>
+                     
+                        <img src="./icons/man-${index}.png" class="icon-header">
+                     
                   </div>
                   <div id="list_card_user_${index}" class="list-group list-card-user">                     
                      ${chamados.filter(chamado => chamado.nmusuario === object.nmusuario).map(currElement => `
@@ -38,39 +37,65 @@ window.onload = function() {
 
          });
 
-         document.querySelector("#list_backlog")
-         .innerHTML += chamados.filter(chamado => chamado.nmusuario == null).map((currElement, index) => `
-            <div data-id="${currElement.cdchamado}" id="card_backlog_${index}" class="list-group-item grabbable card-backlog" onclick="abreChamado(this)">
-               <span class="header-chamado"> ${currElement.cdchamado} 
-                  <span class="header-chamado-title"> - ${currElement.nmcliente} - ${currElement.nmseveridade} </span>  
-               </span> 
-               <span class="description-chamado">                   
-               <p> ${ currElement.dschamado.length > 90 ? `${currElement.dschamado.substring(0,89)}... ` : currElement.dschamado} </p>
-               </span>
-            </div>`).join('');
+         // Carrega Columns e Cards (Backlog)
+         document.querySelector("#area_backlog")
+         .innerHTML += `				
+            <div id="backlog">
+               <div class="list-group-item header-backlog">
+                  Backlog
+               </div>      
+               <div id="list_backlog" class="list-group">               
+                  ${chamados.filter(chamado => chamado.nmusuario == null).map((currElement, index) => `
+                  <div data-id="${currElement.cdchamado}" id="card_backlog_${index}" class="list-group-item grabbable card-backlog" onclick="abreChamado(this)">
+                     <span class="header-chamado"> ${currElement.cdchamado} 
+                        <span class="header-chamado-title"> - ${currElement.nmcliente} - ${currElement.nmseveridade} </span>  
+                     </span> 
+                     <span class="description-chamado">                   
+                     <p> ${ currElement.dschamado.length > 90 ? `${currElement.dschamado.substring(0,89)}... ` : currElement.dschamado} </p>
+                     </span>
+                  </div>`).join('')};
 
+               </div>
+            </div>`;         
       })
       .then(() => {
 
          // Order Backlog Items
-         Sortable.create(list_backlog, { group: 'shared', animation: 150, sort: true });
+         Sortable.create(list_backlog, { 
+            group: 'shared', 
+            animation: 100, 
+            sort: true, 
+            chosenClass: "custom-chosen",
+            // ghostClass: "custom-ghost", 
+            // dragClass: "custom-target" ,
+            revertDuration: 0,
+            forceFallback: true,
+            delay: 0, 
+	         delayOnTouchOnly: false
+         });
+         
          // Order Users
-         Sortable.create(area_users, { animation: 150, sort: true });
+         Sortable.create(area_users, { 
+            animation: 150, 
+            sort: true,
+            delay: 0, 
+         });
          // Order Users Items
-         document.querySelectorAll(".list-card-user").forEach(function(element) {            
-            let elUser = document.getElementById(element.id);            
+         document.querySelectorAll(".list-card-user").forEach(function(element) {
+            let elUser = document.getElementById(element.id);
             
             Sortable.create(elUser, { 
                group: 'shared', 
-               animation: 150, 
-               sort: true 
-               // , onStart: function(evt) {
-               //    var itemEl = evt.item;
-               //    toggleClass(itemEl.parentNode);
-               //    console.log(itemEl);
-               // }
-            });   
-
+               animation: 100, 
+               sort: true, 
+               chosenClass: "custom-chosen",
+               // ghostClass: "custom-ghost", 
+               // dragClass: "custom-target" ,
+               revertDuration: 0,
+               forceFallback: true,
+               delay: 0, 
+	            delayOnTouchOnly: false
+            });
          })
       })
 

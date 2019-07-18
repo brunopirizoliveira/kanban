@@ -74,7 +74,9 @@ body {
     font-size: 12px; 
     display: flex;
     justify-content: center; 
-    margin-bottom: 2px;   
+    margin-bottom: 2px;       
+    padding: 5px;
+    align-items: center;
 }
 
 .area-backlog .header-chamado {
@@ -138,6 +140,7 @@ body {
     align-items: center;
 }
 
+
 /* .area-users > div > ul > li{
     background-color: white;
     height: 50px;
@@ -195,18 +198,19 @@ body {
     margin-top: 1rem;    
 }
 
-
-/* Sortable-Ghost */
-/* .sortable-chosen, sortable-chosen.sortable-ghost {
-    opacity: 0;
+/* Icon Font-Awesome */
+/* .icone {
+    font-size: 10px;
 } */
-.sortable-ghost {
-  background-color: #dadada;
-  opacity: 1;
+
+.icon-header{
+    width: 14px;
+    height: 14px;
 }
 
-/* Icon Font-Awesome */
-.icone {
-    font-size: 10px;
-    /* cursor: pointer; */
+/* Sortable Chosen */
+.custom-chosen {
+    background-color: lemonchiffon;
+    color: black;
+    opacity: 0.2;
 }
