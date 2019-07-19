@@ -71,6 +71,24 @@ window.onload = function() {
             forceFallback: true, // Para elemento voltar para o lugar
             fallbackTolerance: 1, //Tolerancia para click
             delay: 3 //Delay para click
+
+            , onStart: function() {
+               $(document).on('mousemove', function(e){                  
+                  $("#ghostCard").css({
+                     display: 'block',                     
+                     left: e.pageX,
+                     top: e.pageY
+                  });
+               });
+            }
+
+            , onEnd: function() {
+               $(document).on('mousemove', function(e){                  
+                  $("#ghostCard").css({
+                     display: 'none'
+                  });
+               });
+            }
          });
          
          // Order Users
@@ -96,6 +114,25 @@ window.onload = function() {
                forceFallback: true, // Para elemento voltar para o lugar
                fallbackTolerance: 1, //Tolerancia para click
                delay: 3 //Delay para click
+
+               , onStart: function() {
+                  $(document).on('mousemove', function(e){                  
+                     $("#ghostCard").css({
+                        display: 'block',                     
+                        left: e.pageX,
+                        top: e.pageY
+                     });
+                  });
+               }
+   
+               , onEnd: function() {
+                  $(document).on('mousemove', function(e){                  
+                     $("#ghostCard").css({
+                        display: 'none'
+                     });
+                  });
+               }
+
             });
          })
       })
