@@ -2,11 +2,11 @@
 window.onload = function() {
 
    // Popula Kanbans
-   fetch('http://localhost:3000/users', { method: 'GET'})
+   fetch('http://wpoa000939:3000/users', { method: 'GET'})
    .then(responseUsers => responseUsers.json())
    .then(dataUsers => users = dataUsers.recordset)
    .then(() => {
-      fetch('http://localhost:3000/chamados', {method: 'GET'})
+      fetch('http://wpoa000939:3000/chamados', {method: 'GET'})
       .then(responseChamados => responseChamados.json())
       .then(dataChamados => chamados = dataChamados.recordset)
       .then(chamados => {
@@ -156,12 +156,13 @@ function toggleClass(target) {
 
    let wrapper = document.getElementById(target.parentNode.id);
 
-   document.querySelectorAll('.container-user-expand').forEach(element => {      
-      if(element.id != target.parentNode.id){
-         document.getElementById(element.id).classList.remove('container-user-expand');
-         document.getElementById(element.id).classList.add('container-user');
-      }         
-   });   
+   // Código para sempre fechar cards expandidos
+   // document.querySelectorAll('.container-user-expand').forEach(element => {      
+   //    if(element.id != target.parentNode.id){
+   //       document.getElementById(element.id).classList.remove('container-user-expand');
+   //       document.getElementById(element.id).classList.add('container-user');
+   //    }         
+   // });   
 
    if(wrapper.classList.contains('container-user-expand')) {
       wrapper.classList.remove('container-user-expand');
